@@ -1,6 +1,8 @@
 # yaml-grapher README
 
-If you have several YAML or YML files linked together for the purpose of ADO pipelines or GH actions, it's easy to get lost in the myriad of template references. This extension produces a graph of references using MermaidJS to help come to terms with the mess.
+If you have several YAML or YML files linked together for the purpose of ADO pipelines or GH actions, it's easy to get lost in the myriad of template references. This extension produces a graph of references using __MermaidJS__ to help come to terms with the mess.
+
+To use, `Ctrl` `Shift` `P` (command palette) then call "Generate YAML Graph"
 
 ![A graph](images/screenshot.png)
 
@@ -22,16 +24,16 @@ Other notes:
 This extension contributes the following settings:
 
 * `yaml-grapher.orientation`: Choose whether the graph is displayed top-down, bottom-up, left-right or right-left
-* `myExtension.thing`: Set to `blah` to do something.
+* `yaml-grapher.theme`: Set to a different theme; "default", "neutral", "dark", "forest"
 
 ## Known Issues
 
-* Single line template references (i.e. with no parameters) do not yet appear in the graph
+* Extension `.js` files are not bundled
 
 ## Release Notes
 
 ### 1.0.0
 
 Initial release of yaml-grapher
-- Recursive links to sub files from a given root
-- Display conditions on links
+* Recursive links to sub files from a given root
+* Display conditions on links
