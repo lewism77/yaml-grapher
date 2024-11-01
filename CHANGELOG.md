@@ -5,7 +5,8 @@ All notable changes to the "yaml-grapher" extension will be documented in this f
 ## [Unreleased]
 
 ### Added
-- Theme customisation
+- Custom themes
+- Reload webview automatically when settings are changed
 
 ## [1.0.0] - 2024-11-1
 
