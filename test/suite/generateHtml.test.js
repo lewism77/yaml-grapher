@@ -39,7 +39,7 @@ describe("generateHtml", () => {
         expect(html).to.include('<html lang="en">');
         expect(html).to.include('<meta charset="UTF-8">');
         expect(html).to.include('<title>YAML Graph</title>');
-        expect(html).to.include('<script type="text/javascript" src="vscode-resource://mermaid.min.js" />');
+        expect(html).to.include('<script type="text/javascript" src="vscode-resource://mermaid.min.js"></script>');
         expect(html).to.include('<div class="mermaid">');
         expect(html).to.include('%%{init: {"theme": "dark", "flowchart" : { "curve" : "basis" } } }%%')
         expect(html).to.include(mermaidContent);
@@ -49,7 +49,7 @@ describe("generateHtml", () => {
         const expectedCspRegex = new RegExp(
             `<meta http-equiv="Content-Security-Policy" content="default-src 'none';\\s*` +
             `img-src ${cspSource} data:;\\s*` +
-            `script-src ${cspSource};\\s*` +
+            `script-src ${cspSource} 'unsafe-inline';\\s*` +
             `style-src ${cspSource} 'unsafe-inline';\\s*">`
         );
         expect(html).to.match(expectedCspRegex);
