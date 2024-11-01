@@ -1,65 +1,35 @@
 # yaml-grapher README
 
-This is the README for your extension "yaml-grapher". After writing up a brief description, we recommend including the following sections.
+If you have several YAML or YML files linked together for the purpose of ADO pipelines or GH actions, it's easy to get lost in the myriad of template references. This extension produces a graph of references using MermaidJS to help come to terms with the mess.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Selecting a start file, it will graph out the references.
+Can show:
+- Conditions of a link
+- Multiple links from one file to another (if links have different conditions)
+- Multi parent links
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Other notes:
+- Root only needs to be a text file with YAML structured text, not necessarily with a yaml extension
+- Any yaml structured file is fine for linked files, extension doesn't matter
+- Linked files don't need to exist to appear in the graph
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
+* `yaml-grapher.orientation`: Choose whether the graph is displayed top-down, bottom-up, left-right or right-left
 * `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* Single line template references (i.e. with no parameters) do not yet appear in the graph
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of yaml-grapher
+- Recursive links to sub files from a given root
+- Display conditions on links

@@ -1,7 +1,10 @@
-import globals from "globals";
+const globals = require("globals");
 
-export default [{
-    files: ["**/*.js"],
+module.exports =[
+    {
+        ignores: [".vscode-test/**", "media/**"]
+    },
+    {
     languageOptions: {
         globals: {
             ...globals.commonjs,
@@ -21,5 +24,5 @@ export default [{
         "no-unused-vars": "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn",
-    },
+    }
 }];

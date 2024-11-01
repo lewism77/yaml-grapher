@@ -1,0 +1,48 @@
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Release name - "Release x.y.z"'
+        required: true
+        type: string
+      tagName:
+        description: 'Release tag name - "release-x.y.z"'
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.x
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Package
+        run: npm run package
+
+      - name: Create release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          name: ${{ github.event.inputs.name }}
+          tag_name: ${{ github.event.inputs.tagName }}
+          fail_on_unmatched_files: true
+          body_path: CHANGELOG.md
+          files: "*.vsix"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish
+        if: success()
+        run: npm run deploy
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}

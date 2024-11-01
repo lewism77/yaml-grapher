@@ -1,0 +1,8 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    uses: ./.github/workflows/build-test.yml
