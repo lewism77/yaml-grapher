@@ -8,7 +8,7 @@
   ],
   "icon": "images/icon.png",
   "publisher": "LewisM",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "commonjs",
   "engines": {
     "vscode": "^1.94.0"
