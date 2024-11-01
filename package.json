@@ -2,6 +2,7 @@
   "name": "yaml-grapher",
   "displayName": "yaml-grapher",
   "description": "Creates a graph of referenced YAML files for any given root file.",
+  "repository": "https://github.com/lewism77/yaml-grapher",
   "extensionKind": [
     "ui"
   ],
