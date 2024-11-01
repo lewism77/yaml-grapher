@@ -38,15 +38,35 @@
         "yaml-grapher.orientation": {
           "type": "string",
           "default": "TD",
-          "enum": ["TD", "BU", "LR", "RL"],
-          "enumItemLabels": ["Top-Down", "Bottom-Up", "Left-Right", "Right-Left"],
+          "enum": [
+            "TD",
+            "BU",
+            "LR",
+            "RL"
+          ],
+          "enumItemLabels": [
+            "Top-Down",
+            "Bottom-Up",
+            "Left-Right",
+            "Right-Left"
+          ],
           "description": "Determines the orientation of the graph"
         },
         "yaml-grapher.theme": {
           "type": "string",
           "default": "dark",
-          "enum": ["default", "neutral", "dark", "forest"],
-          "enumItemLabels": ["Default", "Neutral", "Dark", "Forest"],
+          "enum": [
+            "default",
+            "neutral",
+            "dark",
+            "forest"
+          ],
+          "enumItemLabels": [
+            "Default",
+            "Neutral",
+            "Dark",
+            "Forest"
+          ],
           "description": "Change the look and feel of the graph"
         }
       }
@@ -65,6 +85,7 @@
     "@types/vscode": "^1.94.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.2.1",
     "chai": "^5.1.2",
     "eslint": "^9.13.0",
     "glob": "^11.0.0",
