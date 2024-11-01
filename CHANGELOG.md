@@ -19,4 +19,5 @@ All notable changes to the "yaml-grapher" extension will be documented in this f
 
 ### Known issues
 
-- Long condition strings can cause boxes to overlap arrows
+- Links won't generate based on `dependsOn` or `condition`
+- Graph tab needs to be closed and reopened for settings changes to take effect
