@@ -18,7 +18,8 @@ describe("generateHtml", () => {
     beforeEach(() => {
         // Mock the webview and context objects
         webviewMock = {
-            asWebviewUri: sinon.stub()
+            asWebviewUri: sinon.stub(),
+            cspSource: "test"
         };
         
         contextMock = {
@@ -40,10 +41,18 @@ describe("generateHtml", () => {
         expect(html).to.include('<title>YAML Graph</title>');
         expect(html).to.include('<script type="text/javascript" src="vscode-resource://mermaid.min.js" />');
         expect(html).to.include('<div class="mermaid">');
+        expect(html).to.include('%%{init: {"theme": "dark", "flowchart" : { "curve" : "basis" } } }%%')
         expect(html).to.include(mermaidContent);
 
         // Verify if CSP includes the expected `script-src` setting
-        expect(html).to.match(/<meta http-equiv="Content-Security-Policy" content="default-src 'none' 'unsafe-inline'; script-src/);
+        const cspSource = webviewMock.cspSource.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const expectedCspRegex = new RegExp(
+            `<meta http-equiv="Content-Security-Policy" content="default-src 'none';\\s*` +
+            `img-src ${cspSource} data:;\\s*` +
+            `script-src ${cspSource};\\s*` +
+            `style-src ${cspSource} 'unsafe-inline';\\s*">`
+        );
+        expect(html).to.match(expectedCspRegex);
     });
 
     it("should correctly initialize mermaid on load", () => {
