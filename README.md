@@ -1,6 +1,6 @@
 # yaml-grapher README
 
-If you have several YAML or YML files linked together for the purpose of ADO pipelines or GH actions, it's easy to get lost in the myriad of template references. This extension produces a graph of references using __MermaidJS__ to help come to terms with the mess.
+If you have several YAML or YML files linked together for the purpose of ADO pipelines or GH actions, it's easy to get lost in the myriad of template references. This extension produces a graph of references using MermaidJS to help come to terms with the mess.
 
 ![A graph](images/screenshot.png)
 
@@ -22,7 +22,7 @@ Other notes:
 This extension contributes the following settings:
 
 * `yaml-grapher.orientation`: Choose whether the graph is displayed top-down, bottom-up, left-right or right-left
-* `yaml-grapher.theme`: Set to a different theme; "default", "neutral", "dark", "forest"
+* `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
