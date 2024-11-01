@@ -7,6 +7,7 @@ All notable changes to the "yaml-grapher" extension will be documented in this f
 ### Added
 - Custom themes
 - Reload webview automatically when settings are changed
+- Supporting links based on `dependsOn` or `condition`
 
 ## [1.0.0] - 2024-11-1
 

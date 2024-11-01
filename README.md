@@ -2,11 +2,13 @@
 
 If you have several YAML or YML files linked together for the purpose of ADO pipelines or GH actions, it's easy to get lost in the myriad of template references. This extension produces a graph of references using MermaidJS to help come to terms with the mess.
 
+![A graph](images/screenshot.png)
+
 ## Features
 
 Selecting a start file, it will graph out the references.
 Can show:
-- Conditions of a link
+- Conditions of a link (when using `${{ if <condition> }}` syntax)
 - Multiple links from one file to another (if links have different conditions)
 - Multi parent links
 
