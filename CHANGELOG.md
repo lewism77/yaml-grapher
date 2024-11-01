@@ -15,3 +15,7 @@ All notable changes to the "yaml-grapher" extension will be documented in this f
 - Display graph of file references
 - Display conditions on links to file references in the graph
 - Configuration options for graph orientation and theme
+
+### Known issues
+
+- Long condition strings can cause boxes to overlap arrows
